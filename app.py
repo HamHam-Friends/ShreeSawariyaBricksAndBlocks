@@ -18,9 +18,14 @@ except Exception as e:
     sheet = None
 
 # Routes
-@app.route("/index.html")
+@app.route("/")
 def home():
     return render_template("index.html")
+
+@app.route("/index.html")
+def index_redirect():
+    return render_template("index.html")
+
 
 @app.route("/about.html")
 def about():
@@ -28,7 +33,7 @@ def about():
 
 @app.route("/product.html")
 def product():
-    return render_template("products.html")
+    return render_template("product.html")
 
 @app.route("/contact.html", methods=["GET", "POST"])
 def contact():
