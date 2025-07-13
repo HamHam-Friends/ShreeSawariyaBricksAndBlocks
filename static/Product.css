@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-image: url(../static/imgs/GreyBricksBackground.png);
+    background-repeat: repeat;
+    background-size: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: inherit;
+    /* reuse the same background as body */
+    background-image: url(../static/imgs/GreyBricksBackground.png);
+    background-repeat: repeat;
+    background-size: auto;
+    filter: blur(2px);
+    z-index: -2;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* 🕶️ black transparent overlay */
+    z-index: -1;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    /* Center the whole navbar */
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-wrap: wrap;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    background: #dedcd8;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    transition: all 0.2s ease-in-out;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+    color: #333;
+}
+
+
+/* Mobile Responsive */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+    .logo {
+        margin: 0 0 1rem 0;
+        justify-content: center;
+    }
+    .nav-links {
+        padding: 0.7rem 1rem;
+        gap: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+    .nav-links a {
+        font-size: 1rem;
+    }
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-right: auto;
+}
+
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 2rem;
+    color: antiquewhite;
+}
+
+#OP {
+    font-size: 300%;
+    font-weight: bold;
+    text-decoration: underline;
+    text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
