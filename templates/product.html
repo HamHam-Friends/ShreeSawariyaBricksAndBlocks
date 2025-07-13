@@ -2,103 +2,295 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sawariya Bricks and Blocks | PRODUCTS</title>
-  <link rel="stylesheet" href="../static/Product.css" />
-  <link rel="stylesheet" href="../static/styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sawariya Bricks and Blocks | PRODUCTS</title>
+    <link rel="stylesheet" href="../static/Product.css" />
+    <link rel="stylesheet" href="../static/styles.css" />
 </head>
 
 <body>
 
-  <nav class="navbar">
-    <div class="logo">
-      <div class="logo-icon"></div>
-      Sawariya Bricks
-    </div>
-    <div class="nav-links">
-      <a href="index.html">HOME</a>
-      <a href="about.html">ABOUT US</a>
-      <a href="product.html">PRODUCTS</a>
-      <a href="contact.html">CONTACT US</a>
-    </div>
-  </nav>
+    <nav class="navbar">
+        <div class="logo">
+            <div class="logo-icon"></div>
+            Sawariya Bricks
+        </div>
+        <div class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="about.html">ABOUT US</a>
+            <a href="product.html">PRODUCTS</a>
+            <a href="contact.html">CONTACT US</a>
+        </div>
+    </nav>
 
-  <section class="product-section">
-    <h1 id="OP">Our Products</h1>
-    <div class="product-grid">
+    <section class="product-section">
+        <h1 id="OP">Our Products</h1>
+        <div class="product-grid">
 
-      <div class="product-card">
-        <img src="../static/imgs/AAC Block.jpg" alt="Bricks" />
-        <h2>AAC Block Bricks</h2>
-        <p>Durable and reliable bricks for all your construction needs.</p>
-        <ul>
-          <li>Strength: 3 N/mm² (can go up to <i>4.5–5 N/mm²)</i></li>
-          <li>Water Absorption: 10% by weight <i>(as per IS 2185 Part 3)</i></li>
-          <li>Available Dimensions:<br> 600 × 200 × 100 mm</sup><br>600 x 200 x 150 mm<br>600 x 200 x 200 mm<br>600 x 200 x 250 mm</li>
-          <li>Weight approx: 7-18kg (varying with dimesions)
-         </ul>
-        <button>Enquiry</button>
-      </div>
+            <div class="product-card">
+                <img src="../static/imgs/AAC Block.jpg" alt="Bricks" />
+                <h2>AAC Block Bricks</h2>
+                <p>Durable and reliable bricks for all your construction needs.</p>
+                <ul>
+                    <li>Strength: 3 N/mm² (can go up to <i>4.5–5 N/mm²)</i></li>
+                    <li>Water Absorption: 10% by weight <i>(as per IS 2185 Part 3)</i></li>
+                    <li>Available Dimensions:<br> 600 × 200 × 100 mm</sup><br>600 x 200 x 150 mm<br>600 x 200 x 200 mm<br>600 x 200 x 250 mm</li>
+                    <li>Weight approx: 7-18kg (varying with dimesions)
+                </ul>
+                <!-- Trigger Button -->
+                <button onclick="openModal()" class="enquiry-btn">Enquire Now</button>
 
-      <div class="product-card">
-        <img src="../static/imgs/grey Ash brick.jpg" alt="Fly Ash Bricks" />
-        <h2>Fly Ash Bricks</h2>
-        <p>Strong and versatile concrete blocks for various applications.</p>
-        <ul>
-          <li>Compressive Strength: +10.00 <i>N/mm<sup>2</sup></i></li>
-          <li>Water Absorption: 7.5 N/mm², often up to 10–12 N/mm²</li>
-          <li>Brick Dimension: 190 × 90 × 90 mm</li>
-          <li>Weight: approx 2.8–3.1 kg</li>
-        </ul><br><br><br><BR>
-        <button></b>Enquiry</button>
-      </div>
+                <!-- Modal -->
+                <div id="popupModal" class="modal-overlay">
+                    <div class="modal-content">
+                        <button class="modal-close" onclick="closeModal()">×</button>
+                        <h2>Contact Us</h2>
+                        <form id="modalContactForm" action="/contact" method="POST" novalidate>
+                            <input type="text" name="full_name" placeholder="Full Name" required style="width:350px;">
+                            <input type="tel" name="contact" placeholder="Contact Number" required style="width:350px;">
+                            <input type="email" name="email" placeholder="Email" required style="width:350px;">
+                            <textarea name="message" placeholder="Message (optional)" style="width:350px;"></textarea>
+                            <button type="submit">Send</button>
+                            <p class="error-msg" id="modalFormError"></p>
+                        </form>
+                    </div>
+                </div>
 
-      <div class="product-card">
-        <img src="../static/imgs/Traingle blocks.jpg" alt="Sand" />
-        <h2>Triangle design Paver Blocks </h2>
-        <p style="display: flex; justify-content: center;">High-quality Block for Street walking pathways, these are designed for durability and style.</p>
-        <button>Enquiry</button>
-      </div>
+            </div>
 
-      <div class="product-card">
-        <img src="../static/imgs/Hexagonal paver.jpeg" alt="Stone" />
-        <h2>Hexagonal Paver Blocks</h2>
-        <p style="display: flex; justify-content: center;">Robust stone materials ideal for foundations and roads.</p>
-        <button>Enquiry</button>
-      </div>
 
-      <!-- Dummy extras if you want 4 full rows -->
-      <div class="product-card">
-        <img src="../static/images/paver.jpg" alt="Pavers" />
-        <h2>Paver Blocks</h2>
-        <p>Perfect for pathways, driveways and landscaping use.</p>
-        <button>Enquiry</button>
-      </div>
+            <div class="product-card">
+                <img src="../static/imgs/grey Ash brick.jpg" alt="Fly Ash Bricks" />
+                <h2>Fly Ash Bricks</h2>
+                <p>Strong and versatile concrete blocks for various applications.</p>
+                <ul>
+                    <li>Compressive Strength: +10.00 <i>N/mm<sup>2</sup></i></li>
+                    <li>Water Absorption: 7.5 N/mm², often up to 10–12 N/mm²</li>
+                    <li>Brick Dimension: 190 × 90 × 90 mm</li>
+                    <li>Weight: approx 2.8–3.1 kg</li>
+                </ul><br><br><br>
+                <br>
+                <!-- Trigger Button -->
+                <button onclick="openModal()" class="enquiry-btn">Enquire Now</button>
 
-      <div class="product-card">
-        <img src="../static/images/cement.jpg" alt="Cement" />
-        <h2>OPC Cement</h2>
-        <p>Premium quality cement for all RCC & masonry works.</p>
-        <button>Enquiry</button>
-      </div>
+                <!-- Modal -->
+                <div id="popupModal" class="modal-overlay">
+                    <div class="modal-content">
+                        <button class="modal-close" onclick="closeModal()">×</button>
+                        <h2>Contact Us</h2>
+                        <form id="modalContactForm" action="/contact" method="POST" novalidate>
+                            <input type="text" name="full_name" placeholder="Full Name" required>
+                            <input type="tel" name="contact" placeholder="Contact Number" required>
+                            <input type="email" name="email" placeholder="Email" required>
+                            <textarea name="message" placeholder="Message (optional)"></textarea>
+                            <button type="submit">Send</button>
+                            <p class="error-msg" id="modalFormError"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
 
-      <div class="product-card">
-        <img src="../static/images/coverblock.jpg" alt="Cover Block" />
-        <h2>Cover Blocks</h2>
-        <p>Precision spacers for rebar cover in concrete casting.</p>
-        <button>Enquiry</button>
-      </div>
 
-      <div class="product-card">
-        <img src="../static/images/plaster.jpg" alt="Plaster Sand" />
-        <h2>Plaster Sand</h2>
-        <p>Fine quality sand ideal for smooth plastering finishes.</p>
-        <button>Enquiry</button>
-      </div>
+            <div class="product-card">
+                <img src="../static/imgs/Traingle blocks.jpg" alt="Sand" />
+                <h2>Triangle design Paver Blocks </h2>
+                <p style="display: flex; justify-content: center;">High-quality Block for Street walking pathways, these are designed for durability and style.</p>
+                <!-- Trigger Button -->
+                <button onclick="openModal()" class="enquiry-btn">Enquire Now</button>
 
-    </div>
-  </section>
+                <!-- Modal -->
+                <div id="popupModal" class="modal-overlay">
+                    <div class="modal-content">
+                        <button class="modal-close" onclick="closeModal()">×</button>
+                        <h2>Contact Us</h2>
+                        <form id="modalContactForm" action="/contact" method="POST" novalidate>
+                            <input type="text" name="full_name" placeholder="Full Name" required>
+                            <input type="tel" name="contact" placeholder="Contact Number" required>
+                            <input type="email" name="email" placeholder="Email" required>
+                            <textarea name="message" placeholder="Message (optional)"></textarea>
+                            <button type="submit">Send</button>
+                            <p class="error-msg" id="modalFormError"></p>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="product-card">
+                <img src="../static/imgs/Hexagonal paver.jpeg" alt="Stone" />
+                <h2>Hexagonal Paver Blocks</h2>
+                <p style="display: flex; justify-content: center;">Robust stone materials ideal for foundations and roads.</p>
+                <!-- Trigger Button -->
+                <button onclick="openModal()" class="enquiry-btn">Enquire Now</button>
+
+                <!-- Modal -->
+                <div id="popupModal" class="modal-overlay">
+                    <div class="modal-content">
+                        <button class="modal-close" onclick="closeModal()">×</button>
+                        <h2>Contact Us</h2>
+                        <form id="modalContactForm" action="/contact" method="POST" novalidate>
+                            <input type="text" name="full_name" placeholder="Full Name" required>
+                            <input type="tel" name="contact" placeholder="Contact Number" required>
+                            <input type="email" name="email" placeholder="Email" required>
+                            <textarea name="message" placeholder="Message (optional)"></textarea>
+                            <button type="submit">Send</button>
+                            <p class="error-msg" id="modalFormError"></p>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Dummy extras if you want 4 full rows -->
+            <div class="product-card">
+                <img src="../static/images/paver.jpg" alt="Pavers" />
+                <h2>Paver Blocks</h2>
+                <p>Perfect for pathways, driveways and landscaping use.</p>
+                <!-- Trigger Button -->
+                <button onclick="openModal()" class="enquiry-btn">Enquire Now</button>
+
+                <!-- Modal -->
+                <div id="popupModal" class="modal-overlay">
+                    <div class="modal-content">
+                        <button class="modal-close" onclick="closeModal()">×</button>
+                        <h2>Contact Us</h2>
+                        <form id="modalContactForm" action="/contact" method="POST" novalidate>
+                            <input type="text" name="full_name" placeholder="Full Name" required>
+                            <input type="tel" name="contact" placeholder="Contact Number" required>
+                            <input type="email" name="email" placeholder="Email" required>
+                            <textarea name="message" placeholder="Message (optional)"></textarea>
+                            <button type="submit">Send</button>
+                            <p class="error-msg" id="modalFormError"></p>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="product-card">
+                <img src="../static/images/cement.jpg" alt="Cement" />
+                <h2>OPC Cement</h2>
+                <p>Premium quality cement for all RCC & masonry works.</p>
+                <!-- Trigger Button -->
+                <button onclick="openModal()" class="enquiry-btn">Enquire Now</button>
+
+                <!-- Modal -->
+                <div id="popupModal" class="modal-overlay">
+                    <div class="modal-content">
+                        <button class="modal-close" onclick="closeModal()">×</button>
+                        <h2>Contact Us</h2>
+                        <form id="modalContactForm" action="/contact" method="POST" novalidate>
+                            <input type="text" name="full_name" placeholder="Full Name" required>
+                            <input type="tel" name="contact" placeholder="Contact Number" required>
+                            <input type="email" name="email" placeholder="Email" required>
+                            <textarea name="message" placeholder="Message (optional)"></textarea>
+                            <button type="submit">Send</button>
+                            <p class="error-msg" id="modalFormError"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="product-card">
+                <img src="../static/images/coverblock.jpg" alt="Cover Block" />
+                <h2>Cover Blocks</h2>
+                <p>Precision spacers for rebar cover in concrete casting.</p>
+                <!-- Trigger Button -->
+                <button onclick="openModal()" class="enquiry-btn">Enquire Now</button>
+
+                <!-- Modal -->
+                <div id="popupModal" class="modal-overlay">
+                    <div class="modal-content">
+                        <button class="modal-close" onclick="closeModal()">×</button>
+                        <h2>Contact Us</h2>
+                        <form id="modalContactForm" action="/contact" method="POST" novalidate>
+                            <input type="text" name="full_name" placeholder="Full Name" required>
+                            <input type="tel" name="contact" placeholder="Contact Number" required>
+                            <input type="email" name="email" placeholder="Email" required>
+                            <textarea name="message" placeholder="Message (optional)"></textarea>
+                            <button type="submit">Send</button>
+                            <p class="error-msg" id="modalFormError"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <img src="../static/images/plaster.jpg" alt="Plaster Sand" />
+                <h2>Plaster Sand</h2>
+                <p>Fine quality sand ideal for smooth plastering finishes.</p>
+                <!-- Trigger Button -->
+                <button onclick="openModal()" class="enquiry-btn">Enquire Now</button>
+
+                <!-- Modal -->
+                <div id="popupModal" class="modal-overlay">
+                    <div class="modal-content">
+                        <button class="modal-close" onclick="closeModal()">×</button>
+                        <h2>Contact Us</h2>
+                        <form id="modalContactForm" action="/contact" method="POST" novalidate>
+                            <input type="text" name="full_name" placeholder="Full Name" required>
+                            <input type="tel" name="contact" placeholder="Contact Number" required>
+                            <input type="email" name="email" placeholder="Email" required>
+                            <textarea name="message" placeholder="Message (optional)"></textarea>
+                            <button type="submit">Send</button>
+                            <p class="error-msg" id="modalFormError"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <script>
+        const modal = document.getElementById("popupModal");
+
+        function openModal() {
+            window.scrollTo({
+                top: 170,
+                behavior: 'smooth'
+            });
+            setTimeout(() => {
+                modal.classList.add("active");
+                document.body.style.overflow = "hidden"; // disable scroll behind modal
+            }, 400); // wait until scroll finishes (adjust delay if needed)
+        }
+
+        function closeModal() {
+            modal.classList.remove("active");
+            document.body.style.overflow = ""; // restore scroll
+        }
+
+        document.getElementById("modalContactForm").addEventListener("submit", function(e) {
+            const name = this.full_name.value.trim();
+            const phone = this.contact.value.trim();
+            const email = this.email.value.trim();
+            const errorMsg = document.getElementById("modalFormError");
+
+            const phoneRegex = /^\d{10}$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
+
+            errorMsg.textContent = "";
+
+            if (!name || !phone || !email) {
+                errorMsg.textContent = "❌ Please fill in all required fields.";
+                e.preventDefault();
+            } else if (!phoneRegex.test(phone)) {
+                errorMsg.textContent = "📞 Contact number must be exactly 10 digits.";
+                e.preventDefault();
+            } else if (!emailRegex.test(email)) {
+                errorMsg.textContent = "📧 Please enter a valid email address.";
+                e.preventDefault();
+            }
+        });
+    </script>
+
 
 </body>
 
