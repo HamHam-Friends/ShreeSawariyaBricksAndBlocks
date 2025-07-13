@@ -1,16 +1,7 @@
-body {
-    margin: 0;
-    background: #f3f1ed;
-    font-family: 'Segoe UI', sans-serif;
-}
-
-.logo {
-    font-weight: bold;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-right: auto;
+.product-section {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 #OP {
@@ -21,12 +12,6 @@ body {
     font-weight: bold;
     text-decoration: underline;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.product-section {
-    padding: 4rem 2rem;
-    max-width: 1200px;
-    margin: auto;
 }
 
 .product-grid {
@@ -47,160 +32,179 @@ body {
 
 .product-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .product-card img {
-    width: 50%;
-    height: 200px;
+    width: 100%;
+    height: 250px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
 }
 
 .product-card h2 {
-    margin: 0.5rem 0;
-    color: #333;
+    padding: 1rem 1rem 0;
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
 }
 
-.product-card p,
+.product-card p {
+    padding: 0 1rem;
+    color: #666;
+}
+
 .product-card ul {
-    color: #555;
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-    padding-left: 0;
-    text-align: left;
+    padding: 0 1rem 1rem;
+    margin: 0;
 }
 
-.product-card li {
-    margin-bottom: 5px;
-    list-style-type: disc;
-    margin-left: 1.2rem;
+.product-card ul li {
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
 }
 
-.product-card button {
-    margin-top: 1rem;
-    margin-bottom: 2px;
-    padding: 0.6rem 1.2rem;
-    border: none;
-    border-radius: 6px;
-    background-color: #ff5c33;
+.enquiry-btn {
+    display: block;
+    width: 40%;
+    margin: 0 auto 1rem;
+    padding: 0.8rem;
+    background-color: #3498db;
     color: white;
-    font-weight: bold;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background-color 0.3s;
 }
 
-.product-card button:hover {
-    background-color: #e6451d;
+.enquiry-btn:hover {
+    background-color: #2980b9;
 }
 
 
-/* Responsive for mobile */
-
-@media (max-width: 768px) {
-    .product-grid {
-        grid-template-columns: 1fr;
-        /* Stack on mobile */
-    }
-    .product-card img {
-        height: 160px;
-    }
-    #OP {
-        font-size: 1.7rem;
-    }
-    .modal-content {
-        position: fixed;
-        top: -5%;
-        left: 4.5%;
-        max-width: 90%;
-    }
-}
+/* Modal styles */
 
 .modal-overlay {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.4);
-    display: none;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
 }
 
 .modal-overlay.active {
-    display: flex;
+    opacity: 1;
+    visibility: visible;
 }
 
 .modal-content {
-    background: white;
-    margin-top: 0%;
-    margin-left: -20%;
-    padding: 30px;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
     width: 90%;
     max-width: 500px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     position: relative;
-    animation: fadeIn 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .modal-close {
     position: absolute;
     top: 10px;
-    right: 14px;
-    font-size: 24px;
-    margin-bottom: 2px;
-    background: transparent;
+    right: 10px;
+    background: none;
     border: none;
+    font-size: 1.5rem;
     cursor: pointer;
+    color: #7f8c8d;
+}
+
+.modal-close:hover {
+    color: #e74c3c;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #2c3e50;
 }
 
 .modal-content input,
 .modal-content textarea {
-    width: 100%;
-    margin-bottom: 12px;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 14px;
+    display: block;
+    width: 94.5%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
 }
 
 .modal-content textarea {
+    min-height: 100px;
     resize: vertical;
-    min-height: 80px;
 }
 
 .modal-content button[type="submit"] {
-    width: 100%;
-    background-color: #e0e0e0;
-    padding: 12px;
+    background-color: #2ecc71;
+    color: white;
     border: none;
-    font-weight: bold;
-    border-radius: 6px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    font-size: 1rem;
+    transition: background-color 0.3s;
 }
 
 .modal-content button[type="submit"]:hover {
-    background-color: #c0c0c0;
+    background-color: #27ae60;
 }
 
 .error-msg {
-    color: red;
-    font-size: 14px;
-    text-align: center;
-    margin-top: 10px;
+    color: #e74c3c;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
 }
 
-@keyframes fadeIn {
-    from {
-        transform: translateY(-30px);
-        opacity: 0;
+
+/* Placeholder fallback styles */
+
+.product-card img {
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+    font-size: 0.8rem;
+}
+
+
+/* Responsive adjustments */
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 1rem;
     }
-    to {
-        transform: translateY(0px);
-        opacity: 1;
+    .logo {
+        margin-bottom: 1rem;
+    }
+    .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .nav-links a {
+        margin: 0 10px 10px;
+    }
+    .product-grid {
+        grid-template-columns: 1fr;
     }
 }
