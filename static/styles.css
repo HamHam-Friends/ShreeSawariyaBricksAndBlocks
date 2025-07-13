@@ -1,0 +1,51 @@
+ body {
+     margin: 0;
+     background: #f3f1ed;
+     font-family: 'Segoe UI', sans-serif;
+ }
+ 
+ .navbar {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 16px 40px;
+     background-color: transparent;
+ }
+ 
+ .logo {
+     font-weight: bold;
+     font-size: 1.5rem;
+     display: flex;
+     align-items: center;
+     gap: 10px;
+ }
+ 
+ .logo-icon {
+     width: 24px;
+     height: 24px;
+     background: black;
+     mask: url('https://upload.wikimedia.org/wikipedia/commons/6/61/Koyeb_logo.svg') no-repeat center;
+     -webkit-mask: url('https://upload.wikimedia.org/wikipedia/commons/6/61/Koyeb_logo.svg') no-repeat center;
+     mask-size: contain;
+     -webkit-mask-size: contain;
+ }
+ 
+ .nav-links {
+     display: flex;
+     background: #dedcd8;
+     padding: 8px 20px;
+     border-radius: 12px;
+     gap: 24px;
+ }
+ 
+ .nav-links a {
+     text-decoration: none;
+     color: black;
+     font-size: 0.9rem;
+     font-weight: 600;
+     letter-spacing: 0.5px;
+ }
+ 
+ .nav-links a:hover {
+     text-decoration: underline;
+ }
