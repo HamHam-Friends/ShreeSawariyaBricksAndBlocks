@@ -9,7 +9,7 @@ __pycache__/
 .env
 
 # Google API credentials
-credentials.json
+creds.json
 
 # VS Code config
 .vscode/
