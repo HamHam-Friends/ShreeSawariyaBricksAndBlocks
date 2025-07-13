@@ -1,31 +1,27 @@
-from flask import Flask, render_template, request, redirect, flash
+from flask import Flask, render_template, request, redirect, url_for, flash
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime
 import logging
 
 app = Flask(__name__)
-app.secret_key = 'your-secret-key-here'  # Required for flash messages
+app.secret_key = 'your-secret-key'
 
-# Google Sheets Setup
+# Setup Google Sheets
 try:
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
     creds = ServiceAccountCredentials.from_json_keyfile_name('creds.json', scope)
     client = gspread.authorize(creds)
     sheet = client.open("Contact Leads").sheet1
 except Exception as e:
-    logging.error(f"[❌ ERROR] Could not connect to Google Sheet: {e}")
+    logging.error(f"[❌ ERROR] Google Sheet connection failed: {e}")
     sheet = None
 
-# Routes
+# ROUTES
+
 @app.route("/")
 def home():
     return render_template("index.html")
-
-@app.route("/index.html")
-def index_redirect():
-    return render_template("index.html")
-
 
 @app.route("/about.html")
 def about():
@@ -45,21 +41,21 @@ def contact():
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
         if not full_name or not contact_number or not email:
-            flash("Please fill in all required fields.")
-            return redirect("/contact")
+            flash("⚠️ Please fill in all required fields.")
+            return redirect(url_for("/contact.html"))
 
         if sheet:
             try:
                 sheet.append_row([full_name, contact_number, email, message, timestamp])
-                flash("Your message has been sent successfully! ✅")
-                return redirect("/")
+                flash("✅ Message received. We'll contact you soon.")
+                return redirect(url_for("product"))
             except Exception as e:
                 logging.error(f"[❌ ERROR] Could not write to sheet: {e}")
-                flash("Something went wrong while saving your data. Please try again later.")
-                return redirect("/contact")
+                flash("Something went wrong. Try again later.")
+                return redirect(url_for("/contact.html"))
         else:
-            flash("Sheet not connected. Contact site admin.")
-            return redirect("/contact")
+            flash("⚠️ Google Sheet not connected.")
+            return redirect(url_for("/contact.html"))
 
     return render_template("contact.html")
 
