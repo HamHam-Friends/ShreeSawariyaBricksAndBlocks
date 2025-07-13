@@ -7,14 +7,13 @@
     <title>Sawariya Bricks and Blocks | CONTACT</title>
 
 
+    <link rel="stylesheet" href="../static/styles.css" />
     <link rel="stylesheet" href="../static/Contact.css" />
 
 
 </head>
 
 <body>
-
-
     <nav class="navbar">
         <div class="logo">
             <div class="logo-icon"></div>
@@ -28,15 +27,47 @@
         </div>
     </nav>
     <br><br><br>
-    <form action="/contact" method="POST">
-        <input type="text" name="full_name" placeholder="Full Name" required>
-        <input type="tel" name="contact" placeholder="Contact Number" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <textarea name="message" placeholder="Message (optional)"></textarea>
-        <button type="submit">Send</button>
-    </form>
+    <section class="contact-section">
+        <div class="form-wrapper">
+            <h2>Get in Touch</h2>
+            <form id="contactForm" action="/contact" method="POST" novalidate>
+                <input type="text" name="full_name" placeholder="Full Name" required>
+                <input type="tel" name="contact" placeholder="Contact Number" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" placeholder="Message (optional)"></textarea>
+                <button type="submit">Send</button>
+                <p class="error-msg" id="formError"></p>
+            </form>
+        </div>
+    </section>
 
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+            const name = this.full_name.value.trim();
+            const phone = this.contact.value.trim();
+            const email = this.email.value.trim();
+            const errorMsg = document.getElementById("formError");
 
+            // Regex patterns
+            const phoneRegex = /^\d{10}$/;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
+
+            // Clear previous error
+            errorMsg.textContent = "";
+
+            // Validation checks
+            if (!name || !phone || !email) {
+                errorMsg.textContent = "❌ Please fill in all required fields.";
+                e.preventDefault();
+            } else if (!phoneRegex.test(phone)) {
+                errorMsg.textContent = "📞 Contact number must be exactly 10 digits.";
+                e.preventDefault();
+            } else if (!emailRegex.test(email)) {
+                errorMsg.textContent = "📧 Please enter a valid email address (like user@gmail.com).";
+                e.preventDefault();
+            }
+        });
+    </script>
 
 </body>
 
