@@ -1,1 +1,35 @@
 
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Environment variables
+.env
+
+# Google API credentials
+credentials.json
+
+# VS Code config
+.vscode/
+
+# Flask runtime files
+instance/
+*.db
+*.sqlite3
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# Python virtual environment
+venv/
+env/
+ENV/
