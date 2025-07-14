@@ -1,9 +1,5 @@
-*{
-    border:solid 1px red;
-}
-
-body{
-    backdrop-filter:blur(1.75px);
+body {
+    backdrop-filter: blur(1.75px);
 }
 
 .about-content-top {
@@ -17,16 +13,17 @@ body{
 
 .owner-image {
     flex: 0 0 300px;
-    margin-top: 10%;
-    margin-left: 5%;
+    margin-top: 2%;
+    margin-left: 10%;
 }
 
 .owner-info {
+    margin-top: 7%;
     flex: 1;
     margin-left: 20%;
 }
 
-#pic{
+#pic {
     border-radius: 10px;
 }
 
@@ -40,7 +37,6 @@ body{
     margin-right: 10%;
     width: 100%;
     border-radius: 30px;
-
 }
 
 #start {
@@ -64,7 +60,7 @@ body{
     transition: ease-in-out 0.3s;
     transform: skew(-10deg);
     letter-spacing: 10%;
-} 
+}
 
 .join {
     display: flex;
@@ -72,8 +68,6 @@ body{
     align-items: center;
     margin-top: 2rem;
 }
-
-
 
 @media (max-width: 768px) {
     .about-content-top {
@@ -90,24 +84,20 @@ body{
         margin-top: 0%;
         width: 60%;
     }
-
     .owner-info {
         margin: 0 auto;
         padding: 1rem;
         margin-top: 0%;
     }
-
     #start {
         text-align: justify;
         font-size: 18px;
         margin-top: 0%;
     }
-
     #about {
         font-size: 40px;
         margin-top: 15%;
     }
-
     .product-card {
         margin: 10% auto;
         margin-top: 0%;

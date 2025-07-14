@@ -47,8 +47,8 @@ def contact():
         if sheet:
             try:
                 sheet.append_row([full_name, contact_number, email, message, timestamp])
-                flash("✅ Message received. We'll contact you soon.")
                 return redirect(url_for("product"))
+            
             except Exception as e:
                 logging.error(f"[❌ ERROR] Could not write to sheet: {e}")
                 flash("Something went wrong. Try again later.")
