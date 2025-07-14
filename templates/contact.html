@@ -2,15 +2,12 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sawariya Bricks and Blocks | CONTACT</title>
-
 
     <link rel="stylesheet" href="../static/styles.css" />
     <link rel="stylesheet" href="../static/Contact.css" />
-
-
 </head>
 
 <body>
@@ -47,25 +44,12 @@
             navLinks.classList.remove('show');
         });
     </script>
-    <br><br><br>
-    <div class="contactUsAll" style="font-weight: lighter;">
-        <div class="contactUs">
-            <div class="contactUs">
-                <div class="address">
-                    <h2>Located At</h2><br>
-                    <h3>Khasra No. 209/1/5/1/1, Gram Sulakhedi, Mangliya road, Tehsil Sanwer, Indore, M.P. 453771</h3>
-                </div><br>
-                <div class="contact">
-                    <h2>Contact Us At</h2><br>
-                    <h3>9977991806 shreesawariyabricks@gmail.com</h3>
-                </div><br>
-                <div class="links">
-                    <h2>Social Links</h2><br>
-                    <h3>ig fb</h3>
-                </div>
-            </div>
-        </div>
 
+    <br><br><br>
+
+    <!-- Combined container -->
+    <div class="fullContact">
+        <!-- CONTACT FORM -->
         <section class="contact-section">
             <div class="form-wrapper">
                 <h2>Contact Us</h2>
@@ -77,9 +61,37 @@
                     <button type="submit">Send</button>
                     <p class="error-msg" id="formError"></p>
                 </form>
-
             </div>
         </section>
+
+        <!-- LOCATION INFO -->
+        <div class="contactUs">
+            <div class="address">
+                <h2>Located At</h2>
+                <h3>Khasra No. 209/1/5/1/1, Gram Sulakhedi, Mangliya road, Tehsil Sanwer, Indore, M.P. 453771</h3>
+            </div><br>
+            <div class="contact">
+                <h2>Contact Us At</h2>
+                <h3>9977991806<br>shreesawariyabricks@gmail.com</h3>
+            </div><br>
+            <div class="links">
+                <h2>Social Links</h2>
+                <h3>Instagram • Facebook</h3>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <!-- MAP -->
+    <div style="border:2px solid #2c3e50; border-radius: 10px; width:95%; margin-left:2.5%;">
+        <div style="filter: invert(90%) hue-rotate(180deg);">
+            <div class="contact-location">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.5601989570932!2d75.9604004!3d22.818754799999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631d004d43c2ad%3A0x73a9571ed12798a9!2sShree%20Sanwariya%20Bricks%20and%20Blocks!5e0!3m2!1sen!2sin!4v1752492156577!5m2!1sen!2sin"
+                    width="100%" height="450" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -89,14 +101,11 @@
             const email = this.email.value.trim();
             const errorMsg = document.getElementById("formError");
 
-            // Regex patterns
             const phoneRegex = /^\d{10}$/;
             const emailRegex = /^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i;
 
-            // Clear previous error
             errorMsg.textContent = "";
 
-            // Validation checks
             if (!name || !phone || !email) {
                 errorMsg.textContent = "❌ Please fill in all required fields.";
                 e.preventDefault();
@@ -104,17 +113,15 @@
                 errorMsg.textContent = "📞 Contact number must be exactly 10 digits.";
                 e.preventDefault();
             } else if (!emailRegex.test(email)) {
-                errorMsg.textContent = "📧 Please enter a valid email address (like user@gmail.com).";
+                errorMsg.textContent = "📧 Please enter a valid email address.";
                 e.preventDefault();
             }
         });
 
-        const form = document.getElementById("contactForm");
-        form.addEventListener("submit", function(e) {
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
             alert("✅ Your message has been sent to the server!");
         });
     </script>
-
 </body>
 
 </html>
