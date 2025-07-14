@@ -2,39 +2,61 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sawariya Bricks and Blocks | HOME</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/styles.css" <title>Sawariya Bricks and Blocks | HOME</title>
 
+    <nav class="navbar">
+        <div class="nav-logo">
+            <a href="/"><img src="../static/imgs/logo.png" alt="logo" width="50px" height="50px"></a>
+            <a href="/"><img src="../static/imgs/logo2.png" alt="Logo2" width="270px" hieght="100px"></a>
+        </div>
+        <div class="nav-links" id="navLinks">
+            <a href="/" class="navlink">HOME</a>
+            <a href="/about.html" class="navlink">ABOUT</a>
+            <a href="/product.html" class="navlink">PRODUCTS</a>
+            <a href="contact.html" class="navlink">CONTACT</a>
+        </div>
+        <div class="hamburger" id="hamburger">&#9776;</div>
+    </nav>
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('navLinks');
 
-    <link rel="stylesheet" href="../static/styles.css" />
-    <link rel="stylesheet" href="../static/index.css" />
+        // Toggle menu on hamburger click
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent click from bubbling
+            navLinks.classList.toggle('show');
+        });
 
+        // Prevent clicks inside the menu from closing it
+        navLinks.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
 
+        // Close menu if clicked anywhere else
+        document.addEventListener('click', () => {
+            navLinks.classList.remove('show');
+        });
+    </script>
 </head>
 
 <body>
+    <script>
+        function openMobileMenu() {
+            document.getElementById("mobileMenu").style.display = "flex";
+        }
 
-
-    <nav class="navbar">
-        <div class="logo">
-            <div class="logo-icon"></div>
-            Sawariya Bricks
-        </div>
-        <div class="nav-links">
-            <a href="/">HOME</a>
-            <a href="about.html">ABOUT US</a>
-            <a href="product.html">PRODUCTS</a>
-            <a href="contact.html">CONTACT US</a>
-        </div>
-    </nav>
+        function closeMobileMenu() {
+            document.getElementById("mobileMenu").style.display = "none";
+        }
+    </script>
 
 
     <main>
         <h1 style="text-align:center; margin-top: 4rem;">Welcome to Sawariya Bricks and Blocks</h1>
         <p style="text-align:center;">Your trusted partner for high-quality construction materials.</p>
     </main>
-
 </body>
 
 </html>
