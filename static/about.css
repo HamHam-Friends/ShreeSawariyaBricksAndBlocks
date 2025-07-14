@@ -1,3 +1,13 @@
+.about-content-top{
+    display:flex;
+    justify-content: space-evenly;
+
+}
+
+.owner-info{
+    width:40%;
+}
+
 .product-card {
     backdrop-filter: blur(3px);
     border-radius: 12px;
@@ -9,12 +19,13 @@
     margin-right: 20%;
     width: 60%;
     border-radius: 30px;
+
 }
 
 #start {
     text-align: left;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 24px;
     margin-bottom: 1rem;
     color: antiquewhite;
     letter-spacing: 20%;
@@ -23,7 +34,7 @@
 #about {
     text-align: center;
     color: white;
-    font-size: 64px;
+    font-size: 55px;
     margin-bottom: 2rem;
     font-weight: bold;
     text-decoration: underline;
