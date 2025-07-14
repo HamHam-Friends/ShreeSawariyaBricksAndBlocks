@@ -1,3 +1,7 @@
+body {
+    backdrop-filter: blur(1.75px);
+}
+
 .product-section {
     padding: 2rem;
     max-width: 1200px;
@@ -190,21 +194,6 @@
 /* Responsive adjustments */
 
 @media (max-width: 768px) {
-    .navbar {
-        flex-direction: column;
-        padding: 1rem;
-    }
-    .logo {
-        margin-bottom: 1rem;
-    }
-    .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    .nav-links a {
-        margin: 0 10px 10px;
-    }
     .product-grid {
         grid-template-columns: 1fr;
     }

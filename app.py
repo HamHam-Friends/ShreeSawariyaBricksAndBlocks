@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, jsonify
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
 from datetime import datetime
@@ -12,13 +12,24 @@ try:
     scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
     creds = ServiceAccountCredentials.from_json_keyfile_name('creds.json', scope)
     client = gspread.authorize(creds)
-    sheet = client.open("Contact Leads").sheet1
+    
+    contact_sheet = client.open("Contact Leads").worksheet("Contact Form")
+    enquiry_sheet = client.open("Contact Leads").worksheet("Enquiry Form")
 except Exception as e:
     logging.error(f"[❌ ERROR] Google Sheet connection failed: {e}")
-    sheet = None
+    contact_sheet = None
+    enquiry_sheet = None
+
+# Insert row into specific sheet below headers
+def insert_row_to_sheet(sheet, values):
+    if not sheet:
+        return
+    try:
+        sheet.insert_row(values, index=2)
+    except Exception as e:
+        logging.error(f"[❌ ERROR] insert_row_to_sheet failed: {e}")
 
 # ROUTES
-
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -44,13 +55,19 @@ def contact():
             flash("⚠️ Please fill in all required fields.")
             return redirect(url_for("/contact.html"))
 
-        if sheet:
+        if contact_sheet:
             try:
-                sheet.append_row([full_name, contact_number, email, message, timestamp])
+                values = [
+                    full_name,
+                    contact_number,
+                    email,
+                    message if message else "",
+                    timestamp
+                ]
+                insert_row_to_sheet(contact_sheet, values)
                 return redirect(url_for("product"))
-            
             except Exception as e:
-                logging.error(f"[❌ ERROR] Could not write to sheet: {e}")
+                logging.error(f"[❌ ERROR] Could not write contact data: {e}")
                 flash("Something went wrong. Try again later.")
                 return redirect(url_for("/contact.html"))
         else:
@@ -58,6 +75,28 @@ def contact():
             return redirect(url_for("/contact.html"))
 
     return render_template("contact.html")
+
+@app.route("/submit-enquiry", methods=["POST"])
+def submit_enquiry():
+    if not enquiry_sheet:
+        return jsonify({"error": "Google Sheet not connected"}), 500
+
+    try:
+        data = request.get_json()
+        name = data.get("name")
+        phone = data.get("phone")
+        email = data.get("email")
+        product = data.get("product")
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+        values = [name, phone, email, product, timestamp]
+        insert_row_to_sheet(enquiry_sheet, values)
+
+        return jsonify({"status": "success"}), 200
+
+    except Exception as e:
+        logging.error(f"[❌ ERROR] Could not submit enquiry: {e}")
+        return jsonify({"error": "Submission failed"}), 500
 
 if __name__ == "__main__":
     app.run(debug=True)
