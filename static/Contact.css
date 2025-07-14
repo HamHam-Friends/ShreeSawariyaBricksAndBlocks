@@ -1,3 +1,28 @@
+body {
+    backdrop-filter: blur(1.75px);
+}
+
+.contactUsAll {
+    margin-left: 5%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 90%;
+    backdrop-filter: blur(1.75px);
+}
+
+.address {
+    font-size: 20px;
+}
+
+.contact {
+    font-size: 20px;
+}
+
+.links {
+    font-size: 20px;
+}
+
 .contact-section {
     display: flex;
     justify-content: center;
