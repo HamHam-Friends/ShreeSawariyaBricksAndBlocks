@@ -54,7 +54,7 @@ body {
     font-weight: bold;
     font-size: 24px;
     margin-bottom: 1rem;
-    color: antiquewhite;
+    color: white;
     letter-spacing: 20%;
 }
 
@@ -142,7 +142,7 @@ body {
     text-align: left;
     font-size: 44px;
     margin-top: 2rem;
-    color: antiquewhite;
+    color: white;
     font-weight: bold;
 }
 
@@ -150,7 +150,7 @@ body {
     text-align: left;
     font-size: 24px;
     margin-top: 1%;
-    color: antiquewhite;
+    color: white;
     font-weight: lighter;
 }
 
@@ -160,7 +160,7 @@ body {
     backdrop-filter: blur(1.75px);
     border-radius: 10px;
     text-align: right;
-    color: antiquewhite;
+    color: white;
     font-size: 22px;
 }
 
