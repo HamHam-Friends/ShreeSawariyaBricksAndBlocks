@@ -8,14 +8,20 @@ body {
     margin: 0 auto;
 }
 
-#OP {
+.product-section h1 {
     text-align: center;
+    backdrop-filter: blur(2px);
+    width: 100%;
+    margin-left: -50%;
+    font-size: 40px;
     color: white;
-    font-size: 350%;
-    margin-bottom: 2rem;
-    font-weight: bold;
     text-decoration: underline;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#OP {
+    font-size: 350%;
+    margin-left: 1%;
 }
 
 .product-grid {
@@ -194,7 +200,20 @@ body {
 /* Responsive adjustments */
 
 @media (max-width: 768px) {
+    #OP {
+        margin-bottom: -15%;
+    }
+    .product-section h1 {
+        text-align: center;
+        margin-left: 1%;
+        margin-top: 0%;
+        margin-bottom: 0%;
+    }
     .product-grid {
         grid-template-columns: 1fr;
     }
+}
+
+footer {
+    background-color: #2c3e50;
 }

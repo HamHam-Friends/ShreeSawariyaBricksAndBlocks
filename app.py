@@ -23,11 +23,15 @@ except Exception as e:
 # Insert row into specific sheet below headers
 def insert_row_to_sheet(sheet, values):
     if not sheet:
+        print("[❌ ERROR] Sheet is None")
         return
     try:
+        print("[📤 INFO] Inserting row:", values)  # ✅ DEBUG HERE
         sheet.insert_row(values, index=2)
+        print("[✅ SUCCESS] Row inserted.")
     except Exception as e:
         logging.error(f"[❌ ERROR] insert_row_to_sheet failed: {e}")
+
 
 # ROUTES
 @app.route("/")
@@ -45,6 +49,7 @@ def product():
 @app.route("/contact.html", methods=["GET", "POST"])
 def contact():
     if request.method == "POST":
+        print("[📩] Contact form submitted")
         full_name = request.form.get("full_name")
         contact_number = request.form.get("contact")
         email = request.form.get("email")
@@ -56,6 +61,7 @@ def contact():
             return redirect(url_for("/contact.html"))
 
         if contact_sheet:
+            print("[✅] Google Sheet connected for Contact Form")
             try:
                 values = [
                     full_name,
@@ -82,6 +88,8 @@ def submit_enquiry():
         return jsonify({"error": "Google Sheet not connected"}), 500
 
     try:
+        print("[📩] Enquiry form submitted")
+        print("[✅] Google Sheet connected for Enquiry Form")
         data = request.get_json()
         name = data.get("name")
         phone = data.get("phone")

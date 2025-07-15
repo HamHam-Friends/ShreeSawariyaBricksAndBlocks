@@ -49,24 +49,28 @@
     <section class="product-section">
         <h1 id="OP">Our Products</h1>
         <div class="product-grid">
+            <br><br>
+
+            <br><br>
+            <h1 style="margin-top: 5%;margin-bottom: 5%;">Bricks and Blocks</h1>
 
             <div class="product-card">
                 <img src="../static\imgs\AACblock.webp" alt="AAC Block" />
                 <h2>AAC Block Bricks</h2>
-                <p>Durable and reliable bricks for all your construction needs.</p>
+                <p>Durable and reliable bricks for all your construction needs.</p><br>
                 <ul>
                     <li align="left">Strength: 3 N/mm² (can go up to <i>4.5–5 N/mm²)</i></li>
                     <li align="left">Water Absorption: 10% by weight <i>(as per IS 2185 Part 3)</i></li>
                     <li align="left">Available Dimensions:<br> 600 × 200 × 100 mm</sup><br>600 x 200 x 150 mm<br>600 x 200 x 200 mm<br>600 x 200 x 250 mm</li>
                     <li align="left">Weight approx: 7-18kg (varying with dimesions)</li>
-                </ul>
+                </ul><br>
                 <button class="enquiry-btn" data-modal="modal-1">Enquire Now</button>
             </div>
 
             <div class="product-card">
                 <img src="../static/imgs/fly ash brick.png" alt="Fly ash bricks in gray color with smooth surface placed in stacks" />
                 <h2>Fly Ash Bricks</h2>
-                <p>Strong and versatile concrete blocks for various applications.</p>
+                <p>Strong and versatile concrete blocks for various applications.</p><br>
                 <ul>
                     <li align="left">Compressive Strength: +10.00 <i>N/mm<sup>2</sup></i></li>
                     <li align="left">Water Absorption: 7.5 N/mm², often up to 10–12 N/mm²</li>
@@ -75,24 +79,27 @@
                 </ul><br><br><br><br>
                 <button class="enquiry-btn" data-modal="modal-2">Enquire Now</button>
             </div>
+            <br>
+
+            <h1 style="margin-top: 5%;margin-bottom: 5%;">Flooring and Landscaping Blocks</h1>
 
             <div class="product-card">
                 <img src="../static/imgs/Traingle paver.jpg" alt="Triangle shaped paver blocks" />
                 <h2>Triangle Pavers</h2>
-                <p>High-quality Block for Street walking pathways, these are designed for durability and style.</p>
+                <p>High-quality Blocks for Street walking pathways, these are designed for durability and style.</p><br>
                 <ul>
                     <li align="left">Material: Concrete</li>
                     <li align="left">Thickness: 60mm or 80mm</li>
                     <li align="left">Design Strength: 30–50 N/mm²</li>
                     <li align="left">Water Absorption: 4–6%</li>
-                </ul>
+                </ul><br><br>
                 <button class="enquiry-btn" data-modal="modal-3">Enquire Now</button>
             </div>
 
             <div class="product-card">
                 <img src="../static/imgs/Hexagonal paver.jpg" alt="Hexagonal paver blocks" />
                 <h2>Hexagonal Pavers</h2>
-                <p>Robust stone materials ideal for pathways and landscaping projects.</p>
+                <p>Robust stone materials ideal for pathways and landscaping projects.</p><br>
                 <ul>
                     <li align="left">Material: Concrete</li>
                     <li align="left">Thickness: 50mm or 80mm</li>
@@ -105,7 +112,7 @@
             <div class="product-card">
                 <img src="../static/imgs/rectangle paver.webp" alt="rectangle paver blocks" />
                 <h2>Plain rectangle Pavers</h2>
-                <p>High-quality Paver block for Street walking pathways, these are designed for durability and style.</p>
+                <p>Simple and solid Pavers used for creating strong, clean, and uniform outdoor surfaces.</p><br>
                 <ul>
                     <li align="left">Material: Concrete</li>
                     <li align="left">Thickness: 60mm or 80mm</li>
@@ -118,7 +125,7 @@
             <div class="product-card">
                 <img src="../static/imgs/zigzag paver.jpg" alt="zigzag shaped paver blocks" />
                 <h2>Zigzag Interlocking Pavers</h2>
-                <p>High-quality Block for Street walking pathways, these are designed for durability and style.</p>
+                <p>These Pavers feature an interlocking pattern that provides high strength, durability, and aesthetic appeal for pavements.</p><br>
                 <ul>
                     <li align="left">Material: Concrete</li>
                     <li align="left">Thickness: 60mm or 80mm</li>
@@ -131,7 +138,7 @@
             <div class="product-card">
                 <img src="../static/imgs/Dumbell paver.jpeg" alt="dumbell shaped paver blocks" />
                 <h2>Dumbell Interlocking Pavers</h2>
-                <p>High-quality Block for Street walking pathways, these are designed for durability and style.</p>
+                <p>These Pavers have a unique interlocking shape, offering superior load-bearing strength and skid resistance.</p><br>
                 <ul>
                     <li align="left">Material: Concrete</li>
                     <li align="left">Thickness: 60mm or 80mm</li>
@@ -144,7 +151,7 @@
             <div class="product-card">
                 <img src="../static/imgs/curved paver.jpg" alt="Curved paver blocks" />
                 <h2>Curved Pavers</h2>
-                <p>High-quality Block for Street walking pathways, these are designed for durability and style.</p>
+                <p>These Pavers are specially designed to create smooth, flowing edges and circular patterns in landscaping projects.</p><br>
                 <ul>
                     <li align="left">Material: Concrete</li>
                     <li align="left">Thickness: 60mm or 80mm</li>
@@ -275,6 +282,12 @@
         </div>
     </section>
 
+    <footer>
+
+
+    </footer>
+
+
     <script>
         // Modal functionality
         document.addEventListener('DOMContentLoaded', function() {
@@ -343,7 +356,6 @@
                         })
                         .then(res => res.json())
                         .then(data => {
-                            alert("Thank you for your enquiry! We'll contact you soon.");
                             const modal = this.closest('.modal-overlay');
                             closeModal(modal);
                             this.reset();
@@ -401,7 +413,6 @@
             modal.classList.remove('active');
         }
     </script>
-
 </body>
 
 </html>
