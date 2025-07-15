@@ -135,4 +135,74 @@ body {
         display: block;
         margin-right: 5%
     }
+    .FooterAll {
+        width: 100%;
+    }
+    .FooterLogoAndInfo {
+        display: none;
+    }
+    .FooterProductAndLinks {
+        max-width: 30%;
+    }
+    #brX {
+        margin-top: 15.7px;
+    }
+    .FooterAddressAndContact {
+        max-width: 53%;
+        font-size: 15px;
+    }
+    .FooterAddressAndContact hr {
+        margin-top: 3px;
+    }
+}
+
+footer {
+    color: white;
+    letter-spacing: 2px;
+    background-color: #2c3e50;
+    border: 1px solid #2c3e50;
+    z-index: 101;
+    border-top: 2px solid #202d3a;
+    border-bottom: 2px solid #202d3a;
+}
+
+.FooterOutsideLogo {
+    display: flex;
+    margin-left: 10%;
+}
+
+.FooterAll {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 5px;
+    margin-top: -3%;
+}
+
+.FooterLogoAndInfo {
+    width: 400px;
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+
+.FooterProductAndLinks {
+    width: 200px;
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+
+.WebLogos {
+    display: flex;
+    gap: 10px;
+    margin-left: 15px;
+}
+
+.FooterAddressAndContact {
+    width: 400px;
+    margin-top: 5%;
+    margin-bottom: 1%;
+}
+
+.copyInfo {
+    text-align: center;
+    margin-bottom: 2%;
 }
