@@ -22,10 +22,12 @@ body {
     flex: 1;
     margin-left: 20%;
 }
+
 :hover.owner-info {
     transform: scale(1.02);
     transition: transform 0.3s ease-in-out;
 }
+
 :hover.owner-image {
     transform: scale(1.02);
     transition: transform 0.3s ease-in-out;
@@ -46,7 +48,6 @@ body {
     width: 100%;
     border-radius: 30px;
 }
-
 
 #start {
     text-align: justify;
@@ -70,8 +71,9 @@ body {
     transform: skew(-10deg);
     letter-spacing: 10%;
 }
+
 :hover#about {
-    transform:translate3d(0, -5px, 0) skew(-10deg);
+    transform: translate3d(0, -5px, 0) skew(-10deg);
     transition: ease-in-out 0.3s;
 }
 
@@ -116,6 +118,12 @@ body {
         margin-top: 0%;
         width: 90%;
     }
+    #AC {
+        text-align: center;
+    }
+    #AAC {
+        text-align: center;
+    }
 }
 
 .more-about {
@@ -129,6 +137,7 @@ body {
     transform: scale(1.02);
     transition: transform 0.3s ease-in-out;
 }
+
 #AAC {
     text-align: left;
     font-size: 44px;
@@ -136,26 +145,30 @@ body {
     color: antiquewhite;
     font-weight: bold;
 }
+
 .aacinfo {
     text-align: left;
     font-size: 24px;
     margin-top: 1%;
     color: antiquewhite;
-    font-weight:lighter;
+    font-weight: lighter;
 }
+
 .AAC-on-top {
     margin: 2rem;
     padding: 1rem;
     backdrop-filter: blur(1.75px);
     border-radius: 10px;
-    text-align:right;
-    color:antiquewhite;
+    text-align: right;
+    color: antiquewhite;
     font-size: 22px;
 }
-:hover.AAC-on-top{
+
+:hover.AAC-on-top {
     transform: scale(1.02);
     transition: transform 0.3s ease-in-out;
 }
-.SSBinfo{
+
+.SSBinfo {
     text-align: left;
 }
